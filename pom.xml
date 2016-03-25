@@ -40,7 +40,7 @@
 		<repository>
 			<id>bintray</id>
 			<name>bintray</name>
-			<url>http://jcenter.bintray.com</url>
+			<url>https://dl.bintray.com/iteratoruk/maven</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -50,7 +50,7 @@
 		<pluginRepository>
 			<id>bintray-plugins</id>
 			<name>bintray-plugins</name>
-			<url>http://jcenter.bintray.com</url>
+			<url>https://dl.bintray.com/iteratoruk/maven</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -60,6 +60,7 @@
 	<distributionManagement>
 		<repository>
 			<id>bintray-iteratoruk-maven</id>
+			<name>iteratoruk-maven</name>
 			<url>https://api.bintray.com/maven/iteratoruk/maven/${project.artifactId}/;publish=1</url>
 		</repository>
 	</distributionManagement>
