@@ -6,6 +6,6 @@ branches:
   - master
   - "/^iterator-library-[0-9]+\\.[0-9]+\\.[0-9]+/"
 after_success:
-  - test "${TRAVIS_PULL_REQUEST}" == "false" && test "${TRAVIS_TAG}" != "" && mvn deploy --settings settings.xml
+  - test "${TRAVIS_PULL_REQUEST}" == "false" && test "${TRAVIS_TAG}" != "" && `mvn deploy --settings settings.xml`
 env:
   secure: EgLYDVuFOYS3atHhIk5SgGyJ+40PABEMNgUB6VcsnmX7xG+foYRZuLC0N/bMn135TtHaWk80yhavQpFFFrbP5jofjnXGCgaoOudJZAmRferuCljFmkCVRW7R5waqvu/LLOSYFNKIhe1kSMtMswHSm2VrTEcVZvttC6FvClp1ZsyS7thi/ltRTqzlaEMOe3X1ZzN8d2cKUyWtL9SUTdvpBpz4dAsZaYcf678JtUC9okipVz7cU6VQNkKVpQ2vTrX3RqbKN/FnV1MbtWUNNlV3LKtqkQ4Fhq+g+lbVdCSTIljoNUCL3N0DrEgjEE37q58K7QzYK2lS+WsreDuTnqrXotxluRtL6q9L8JW55/fJooP58QPUsLkk+EzBEIhmAUWMWV3eyOcJm6PwxL3F6FJZDmHoKanh+9d8gSoK8xk4jv2Gg53xRhzxGLbUwxMRW5t4AmQ0XkSYm3EusdJccJgbyLto6NzcNV3TCTyCHADphYXpcWygEHshgVMZkvQ9UGyJlXggvKxs1sX2cTLFOpumKfXl1sZurx/0JHRL+lGmU+uKUvl09qxPLAocgJ4vFoNGX/fgRjQKgy/D4N4hmV/38XbnjfDunBQAV1CGyfJw+3urdzx+7rttfRoZyrESWE8g3Mh2ba46SAfS4BS8gyIM8PcZ1Lx2Sv/k20L6I6PZv2I=
