@@ -5,7 +5,7 @@
     <servers>
         <server>
             <id>bintray-iteratoruk-maven</id>
-            <username>iteratoruk</username>
+            <username>${env.BINTRAY_USER}</username>
             <password>${env.BINTRAY_API_KEY}</password>
         </server>
     </servers>

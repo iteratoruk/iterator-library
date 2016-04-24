@@ -10,14 +10,17 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<scm.host>github.com</scm.host>
+		<scm.organization>iteratoruk</scm.organization>
+		<scm.uri>${scm.host}/${scm.organization}/${project.artifactId}</scm.uri>
 	</properties>
 
 	<name>Iterator Library</name>
-	<url>https://github.com/iteratoruk/${project.artifactId}</url>
+	<url>https://${scm.uri}</url>
 	<scm>
-		<url>https://github.com/iteratoruk/${project.artifactId}</url>
-		<connection>scm:git:git@github.com:iteratoruk/${project.artifactId}.git</connection>
-		<developerConnection>scm:git:git@github.com:iteratoruk/${project.artifactId}.git</developerConnection>
+		<url>https://${scm.uri}</url>
+		<connection>scm:git:git@${scm.uri}.git</connection>
+		<developerConnection>scm:git:git@${scm.uri}.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<issueManagement>
@@ -67,25 +70,35 @@
 	
 	<dependencyManagement>
 		<dependencies>
+			<!-- use spring.io depepdencies -->
 			<dependency>
-			    <groupId>javax.validation</groupId>
-			    <artifactId>validation-api</artifactId>
-			    <version>1.1.0.Final</version>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>2.0.3.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            
+            <!-- other dependencies -->
+			<dependency>
+			    <groupId>org.apache.commons</groupId>
+			    <artifactId>commons-lang3</artifactId>
+			    <version>3.4</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.commons</groupId>
+			    <artifactId>commons-math3</artifactId>
+			    <version>3.6.1</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.hibernate.javax.persistence</groupId>
+			    <artifactId>hibernate-jpa-2.1-api</artifactId>
+			    <version>1.0.0.Final</version>
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.12</version>
-			</dependency>
-			<dependency>
-			    <groupId>org.hamcrest</groupId>
-			    <artifactId>hamcrest-core</artifactId>
-			    <version>1.3</version>
-			</dependency>
-			<dependency>
-			    <groupId>org.hamcrest</groupId>
-			    <artifactId>hamcrest-library</artifactId>
-			    <version>1.3</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
