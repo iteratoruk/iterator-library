@@ -10,17 +10,19 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<scm.user>git</scm.user>
 		<scm.host>github.com</scm.host>
 		<scm.organization>iteratoruk</scm.organization>
-		<scm.uri>${scm.host}/${scm.organization}/${project.artifactId}</scm.uri>
+		<scm.uri>${scm.user}@${scm.host}:${scm.organization}/${project.artifactId}.git</scm.uri>
+		<scm.https.home>https://${scm.host}/${scm.organization}/${project.artifactId}</scm.https.home>
 	</properties>
 
 	<name>Iterator Library</name>
-	<url>https://${scm.uri}</url>
+	<url>${scm.https.home}</url>
 	<scm>
-		<url>https://${scm.uri}</url>
-		<connection>scm:git:git@${scm.uri}.git</connection>
-		<developerConnection>scm:git:git@${scm.uri}.git</developerConnection>
+		<url>${scm.https.home}</url>
+		<connection>scm:git:${scm.uri}</connection>
+		<developerConnection>scm:git:${scm.uri}</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<issueManagement>
