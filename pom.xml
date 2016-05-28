@@ -13,16 +13,21 @@
 		<scm.user>git</scm.user>
 		<scm.host>github.com</scm.host>
 		<scm.organization>iteratoruk</scm.organization>
-		<scm.uri>${scm.user}@${scm.host}:${scm.organization}/${project.artifactId}.git</scm.uri>
+		<scm.uri>scm:git:${scm.user}@${scm.host}:${scm.organization}/${project.artifactId}.git</scm.uri>
 		<scm.https.home>https://${scm.host}/${scm.organization}/${project.artifactId}</scm.https.home>
 	</properties>
 
 	<name>Iterator Library</name>
 	<url>${scm.https.home}</url>
+	<inceptionYear>2016</inceptionYear>
+	<organization>
+		<name>Iterator Ltd.</name>
+		<url>http://iterator.co.uk</url>
+	</organization>
 	<scm>
 		<url>${scm.https.home}</url>
-		<connection>scm:git:${scm.uri}</connection>
-		<developerConnection>scm:git:${scm.uri}</developerConnection>
+		<connection>${scm.uri}</connection>
+		<developerConnection>${scm.uri}</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<issueManagement>
@@ -61,7 +66,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>bintray-iteratoruk-maven</id>
@@ -69,7 +74,7 @@
 			<url>https://api.bintray.com/maven/iteratoruk/maven/${project.artifactId}/;publish=1</url>
 		</repository>
 	</distributionManagement>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<!-- use spring.io depepdencies -->
@@ -80,7 +85,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            
+
             <!-- other dependencies -->
 			<dependency>
 			    <groupId>org.apache.commons</groupId>
@@ -108,6 +113,11 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>com.mycila</groupId>
+				    <artifactId>license-maven-plugin</artifactId>
+				    <version>2.11</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 	                <artifactId>maven-compiler-plugin</artifactId>
@@ -146,6 +156,30 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
+			<plugin>
+			    <groupId>com.mycila</groupId>
+			    <artifactId>license-maven-plugin</artifactId>
+			    <configuration>
+			        <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+			        <properties>
+			            <owner>${project.organization.name}</owner>
+			            <email>iteratoruk@gmail.com</email>
+			        </properties>
+			        <includes>
+			            <include>src/main/java/**</include>
+			        </includes>
+			        <strictCheck>true</strictCheck>
+			    </configuration>
+			    <executions>
+			        <execution>
+			        	<id>format-license</id>
+			        	<phase>process-resources</phase>
+			            <goals>
+			                <goal>format</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
