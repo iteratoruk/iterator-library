@@ -10,6 +10,7 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<quartz.version>2.2.3</quartz.version>
 		<scm.user>git</scm.user>
 		<scm.host>github.com</scm.host>
 		<scm.organization>iteratoruk</scm.organization>
@@ -81,12 +82,22 @@
 			<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.3.6.RELEASE</version>
+                <version>1.4.0.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
             <!-- other dependencies -->
+            <dependency>
+			    <groupId>commons-io</groupId>
+			    <artifactId>commons-io</artifactId>
+			    <version>2.5</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>19.0</version>
+			</dependency>
 			<dependency>
 			    <groupId>org.apache.commons</groupId>
 			    <artifactId>commons-lang3</artifactId>
@@ -101,6 +112,16 @@
 			    <groupId>org.hibernate.javax.persistence</groupId>
 			    <artifactId>hibernate-jpa-2.1-api</artifactId>
 			    <version>1.0.0.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz-jobs</artifactId>
+				<version>${quartz.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
