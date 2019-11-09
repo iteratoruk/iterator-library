@@ -7,7 +7,10 @@
 
 	<properties>
 		<jacoco.version>0.8.5</jacoco.version>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring.boot.version>2.2.0.RELEASE</spring.boot.version>
@@ -185,9 +188,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+					<release>${java.version}</release>
                 </configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.ow2.asm</groupId>
+						<artifactId>asm</artifactId>
+						<version>7.2</version>
+					</dependency>
+				</dependencies>
             </plugin>
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
@@ -228,6 +237,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+				<dependencies>
+					<dependency>
+						<groupId>org.ow2.asm</groupId>
+						<artifactId>asm</artifactId>
+						<version>7.2</version>
+					</dependency>
+				</dependencies>
             </plugin>
             <plugin>
 			    <groupId>org.eluder.coveralls</groupId>
