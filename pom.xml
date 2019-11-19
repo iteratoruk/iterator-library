@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>uk.co.iterator</groupId>
 	<artifactId>iterator-library</artifactId>
@@ -83,18 +84,18 @@
 		<dependencies>
 			<!-- use spring boot dependencies -->
 			<dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 
-            <!-- additional managed dependencies -->
-            <dependency>
-			    <groupId>commons-io</groupId>
-			    <artifactId>commons-io</artifactId>
-			    <version>2.6</version>
+			<!-- additional managed dependencies -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.6</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.guava</groupId>
@@ -102,9 +103,9 @@
 				<version>28.1-jre</version>
 			</dependency>
 			<dependency>
-			    <groupId>org.apache.commons</groupId>
-			    <artifactId>commons-math3</artifactId>
-			    <version>3.6.1</version>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-math3</artifactId>
+				<version>3.6.1</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -114,13 +115,13 @@
 			<plugins>
 				<plugin>
 					<groupId>com.mycila</groupId>
-				    <artifactId>license-maven-plugin</artifactId>
-				    <version>3.0</version>
+					<artifactId>license-maven-plugin</artifactId>
+					<version>3.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-compiler-plugin</artifactId>
-	                <version>3.8.1</version>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -134,23 +135,23 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-				    <artifactId>maven-release-plugin</artifactId>
-				    <version>2.5.3</version>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-resources-plugin</artifactId>
-	                <version>3.1.0</version>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.1.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-source-plugin</artifactId>
-	                <version>3.2.0</version>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.2.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-surefire-plugin</artifactId>
-	                <version>3.0.0-M3</version>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.0.0-M3</version>
 				</plugin>
 				<plugin>
 					<groupId>org.jacoco</groupId>
@@ -163,43 +164,43 @@
 					<version>4.3.0</version>
 				</plugin>
 				<plugin>
-					<groupId>com.coveo</groupId>
-					<artifactId>fmt-maven-plugin</artifactId>
-					<version>2.9</version>
+					<groupId>com.theoryinpractise</groupId>
+					<artifactId>googleformatter-maven-plugin</artifactId>
+					<version>1.7.4</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
 			<plugin>
-			    <groupId>com.mycila</groupId>
-			    <artifactId>license-maven-plugin</artifactId>
-			    <configuration>
-			        <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
-			        <properties>
-			            <owner>${project.organization.name}</owner>
-			            <email>iteratoruk@gmail.com</email>
-			        </properties>
-			        <includes>
-			            <include>src/main/java/**</include>
-			        </includes>
-			        <strictCheck>true</strictCheck>
-			    </configuration>
-			    <executions>
-			        <execution>
-			        	<id>format-license</id>
-			        	<phase>process-resources</phase>
-			            <goals>
-			                <goal>format</goal>
-			            </goals>
-			        </execution>
-			    </executions>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<configuration>
+					<header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+					<properties>
+						<owner>${project.organization.name}</owner>
+						<email>iteratoruk@gmail.com</email>
+					</properties>
+					<includes>
+						<include>src/main/java/**</include>
+					</includes>
+					<strictCheck>true</strictCheck>
+				</configuration>
+				<executions>
+					<execution>
+						<id>format-license</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>format</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
 					<release>${java.version}</release>
-                </configuration>
+				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.ow2.asm</groupId>
@@ -207,50 +208,50 @@
 						<version>7.2</version>
 					</dependency>
 				</dependencies>
-            </plugin>
-			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-javadoc-plugin</artifactId>
-			    <executions>
-			        <execution>
-			            <id>attach-javadocs</id>
-			            <goals>
-			                <goal>jar</goal>
-			            </goals>
-			        </execution>
-			    </executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-release-plugin</artifactId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
 			</plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
 				<dependencies>
 					<dependency>
 						<groupId>org.ow2.asm</groupId>
@@ -258,13 +259,13 @@
 						<version>7.2</version>
 					</dependency>
 				</dependencies>
-            </plugin>
-            <plugin>
-			    <groupId>org.eluder.coveralls</groupId>
-			    <artifactId>coveralls-maven-plugin</artifactId>
-			    <configuration>
-			        <repoToken>${env.COVERALLS_REPO_TOKEN}</repoToken>
-			    </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<configuration>
+					<repoToken>${env.COVERALLS_REPO_TOKEN}</repoToken>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -307,16 +308,15 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>com.coveo</groupId>
-				<artifactId>fmt-maven-plugin</artifactId>
-				<configuration>
-					<displayFiles>false</displayFiles>
-				</configuration>
+				<groupId>com.theoryinpractise</groupId>
+				<artifactId>googleformatter-maven-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>reformat-sources</id>
 						<goals>
-							<goal>check</goal>
+							<goal>format</goal>
 						</goals>
+						<phase>process-sources</phase>
 					</execution>
 				</executions>
 			</plugin>
