@@ -14,9 +14,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring.boot.version>2.2.1.RELEASE</spring.boot.version>
+		<scm.user>git</scm.user>
 		<scm.host>github.com</scm.host>
 		<scm.organization>iteratoruk</scm.organization>
-		<scm.uri>scm:git:ssh://${scm.host}:${scm.organization}/${project.artifactId}.git</scm.uri>
+		<scm.uri>scm:git:${scm.user}@${scm.host}:${scm.organization}/${project.artifactId}.git</scm.uri>
 		<scm.https.home>https://${scm.host}/${scm.organization}/${project.artifactId}</scm.https.home>
 	</properties>
 
